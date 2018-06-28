@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 
-app.set('port', (process.env.PORT || 3000));
+app.set('port', (process.env.PORT || 3001));
 
 app.use('/', express.static(__dirname));
 
@@ -10,6 +10,6 @@ app.listen(app.get('port'), function() {
 });
 
 // routing
-app.get('/', function (req, res) {
-    res.sendfile(__dirname + '/index.html');
+app.get('/secret', function (req, res) {
+    res.sendFile(__dirname + '/index2.html');
 });
